@@ -15,12 +15,14 @@ createBtnEl.addEventListener('click', handleCreateBtnClick)
 destroyBtnEl.addEventListener('click', handleDestroyBtnClick)
 
 function handleInputChange(event) {
-  console.log(event.target.value)
+  event.preventDefault()
+
   amount = event.target.value
   return amount
 }
 
 function handleCreateBtnClick() {
+  divArray = []
   createBoxes(amount)
 }
 
