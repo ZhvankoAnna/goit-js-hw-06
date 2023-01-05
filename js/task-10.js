@@ -9,6 +9,7 @@ const boxEl = document.querySelector('#boxes')
 
 let amount = 0
 let divArray = []
+let size = 30
 
 inputEl.addEventListener('input', handleInputChange)
 createBtnEl.addEventListener('click', handleCreateBtnClick)
@@ -18,7 +19,6 @@ function handleInputChange(event) {
   event.preventDefault()
 
   amount = event.target.value
-  return amount
 }
 
 function handleCreateBtnClick() {
@@ -28,14 +28,14 @@ function handleCreateBtnClick() {
 
 function handleDestroyBtnClick() {
   boxEl.innerHTML = ''
-  divArray = []
+  count = 30
 }
 
 function createBoxes(amount) {
-  for(let i = 30; i < amount * 10 + 30; i += 10) {
+  for(let i = 0; i < amount; i++) {
     const color = getRandomHexColor()
-    const box = `<div style="background-color: ${color}; width: ${i}px; height: ${i}px;"></div>`
-
+    const box = `<div style="background-color: ${color}; width: ${size}px; height: ${size}px;"></div>`
+    size +=10
     divArray.push(box)
   }
 

@@ -22,5 +22,3 @@ const galleryElems = images.map(({url, alt}) =>{
 }).join('')
 
 listEl.insertAdjacentHTML('beforeend', galleryElems)
-
-console.log(galleryElems)
